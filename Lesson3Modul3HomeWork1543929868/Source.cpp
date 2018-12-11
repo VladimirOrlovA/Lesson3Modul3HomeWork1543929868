@@ -35,22 +35,42 @@ void Task2()
 	int a, b, c, d, e;
 	float average=0;
 
-	printf(" Введите 5 оценок студента из табеля: \n");
+	printf(" Введите 5 оценок студента из табеля от 1 до 5 баллов: \n");
 	
-	printf("\n 1 => ");
-	scanf_s("%d", &a);
+	do
+	{
+		printf("\n 1 => ");
+		scanf_s("%d", &a);
+		if (a == 0 || a > 5) { printf("	не верный ввод, попробуйте еще раз..."); }
+	} while (a == 0 || a > 5);
+	
+	do
+	{
+		printf("\n 2 => ");
+		scanf_s("%d", &b);
+		if (b == 0 || b > 5) { printf("	не верный ввод, попробуйте еще раз..."); }
+	} while (b == 0 || b > 5);
 
-	printf(" 2 => ");
-	scanf_s("%d", &b);
+	do
+	{
+		printf("\n 3 => ");
+		scanf_s("%d", &c);
+		if (c == 0 || c > 5) { printf("	не верный ввод, попробуйте еще раз..."); }
+	} while (c == 0 || c > 5);
 
-	printf(" 3 => ");
-	scanf_s("%d", &c);
+	do
+	{
+		printf("\n 4 => ");
+		scanf_s("%d", &d);
+		if (d == 0 || d > 5) { printf("	не верный ввод, попробуйте еще раз..."); }
+	} while (d == 0 || d > 5);
 
-	printf(" 4 => ");
-	scanf_s("%d", &d);
-
-	printf(" 5 => ");
-	scanf_s("%d", &e);
+	do
+	{
+		printf("\n 5 => ");
+		scanf_s("%d", &e);
+		if (e == 0 || e > 5) { printf("	не верный ввод, попробуйте еще раз..."); }
+	} while (e == 0 || e > 5);
 
 	average = (float)(a + b + c + d + e) / 5;
 
@@ -76,13 +96,37 @@ void Task4()
 {
 	printf("\n ---------------------------------------------------------------------\n Task4 \n\n");
 
-	int a, b;
+	int a, b=1234567890, operation=0, result;
 
-	printf(" Введите число a => ");
+	printf(" Калькулятор \n\n Число => ");
 	scanf_s("%d", &a);
 
-	printf(" Введите число b => ");
+	printf("\n Выберите действие: ");
+	printf("\n (1) -  \"+\"");
+	printf("\n (2) -  \"-\"");
+	printf("\n (3) -  \"*\"");
+	printf("\n (4) -  \"/\"");
+	printf("\n  ");
+
+	start:
+	scanf_s("%d",&operation);
+	if (operation < 1 || operation > 4) { printf("\n Ошибочный выбор. Попробуйте еще раз... "); printf("\n  "); goto start; }
+
+	printf("\n Число => ");
 	scanf_s("%d", &b);
+	
+		switch (operation)
+		{
+		case 1: {result = a + b; printf("\n Результат %d", result); } break;
+		case 2: {result = a - b; printf("\n Результат %d", result); } break;
+		case 3: {result = a * b; printf("\n Результат %d", result); } break;
+		case 4: 
+		{
+			if (a != 0)	{result = a / b; printf("\n Результат %d", result);	}
+			else { printf("\n Деление на ноль!"); }
+		} break;
+
+		}
 
 }
 
