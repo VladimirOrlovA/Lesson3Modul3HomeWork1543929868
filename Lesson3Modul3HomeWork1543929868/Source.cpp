@@ -2,6 +2,7 @@
 #include<iostream>
 #include<locale.h>
 #include<time.h>
+#include<Windows.h>
 
 
 void Task1()
@@ -134,27 +135,94 @@ void Task5()
 {
 	printf("\n ---------------------------------------------------------------------\n Task5 \n\n");
 
-	int a, b;
+	int a, b, c;
 
-	printf(" ¬ведите число a => ");
+	printf("\n ¬ыберите номер цвета дл€ фона и дл€ текста: \n");
+	printf("\n 0 Ч черный");
+	printf("\n 1 Ч синий");
+	printf("\n 2 Ч зеленый");
+	printf("\n 3 Ч голубой");
+	printf("\n 4 Ч красный");
+	printf("\n 5 Ч пурпурный");
+	printf("\n 6 Ч желтый");
+	printf("\n 7 Ч белый");
+	printf("\n 8 Ч серый");
+	printf("\n 9 Ч свело - синий");
+	printf("\n 10 Ч светло - зеленый");
+	printf("\n 11 Ч светло - голубой");
+	printf("\n 12 Ч светло - красный");
+	printf("\n 13 Ч светло - пурпурный");
+	printf("\n 14 Ч светло - желтый");
+	printf("\n 15 Ч €рко - белый");
+
+
+	start:
+	printf("\n ÷вет фона от 0 до 14 => ");
 	scanf_s("%d", &a);
 
-	printf(" ¬ведите число b => ");
+	if (a == 0)		{ printf("\n 0 Ч черный"				); }
+	if (a == 1)		{ printf("\n 1 Ч синий"					); }
+	if (a == 2)		{ printf("\n 2 Ч зеленый"				); }
+	if (a == 3)		{ printf("\n 3 Ч голубой"				); }
+	if (a == 4)		{ printf("\n 4 Ч красный"				); }
+	if (a == 5)		{ printf("\n 5 Ч пурпурный"				); }
+	if (a == 6)		{ printf("\n 6 Ч желтый"				); }
+	if (a == 7)		{ printf("\n 7 Ч белый"					); }
+	if (a == 8)		{ printf("\n 8 Ч серый"					); }
+	if (a == 9)		{ printf("\n 9 Ч свело - синий"			); }
+	if (a == 10)	{ printf("\n 10 Ч светло - зеленый"		); }
+	if (a == 11)	{ printf("\n 11 Ч светло - голубой"		); }
+	if (a == 12)	{ printf("\n 12 Ч светло - красный"		); }
+	if (a == 13)	{ printf("\n 13 Ч светло - пурпурный"	); }
+	if (a == 14)	{ printf("\n 14 Ч светло - желтый"		); }
+	if (a == 15)	{ printf("\n 15 Ч €рко - белый"			); }
+
+	printf("\n\n ÷вет шрифта от 0 до 15 => ");
 	scanf_s("%d", &b);
 
+	if (b == 0) { printf("\n 0 Ч черный"); }
+	if (b == 1) { printf("\n 1 Ч синий"); }
+	if (b == 2) { printf("\n 2 Ч зеленый"); }
+	if (b == 3) { printf("\n 3 Ч голубой"); }
+	if (b == 4) { printf("\n 4 Ч красный"); }
+	if (b == 5) { printf("\n 5 Ч пурпурный"); }
+	if (b == 6) { printf("\n 6 Ч желтый"); }
+	if (b == 7) { printf("\n 7 Ч белый"); }
+	if (b == 8) { printf("\n 8 Ч серый"); }
+	if (b == 9) { printf("\n 9 Ч свело - синий"); }
+	if (b == 10) { printf("\n 10 Ч светло - зеленый"); }
+	if (b == 11) { printf("\n 11 Ч светло - голубой"); }
+	if (b == 12) { printf("\n 12 Ч светло - красный"); }
+	if (b == 13) { printf("\n 13 Ч светло - пурпурный"); }
+	if (b == 14) { printf("\n 14 Ч светло - желтый"); }
+	if (b == 15) { printf("\n 15 Ч €рко - белый"); }
+
+
+	if (a == b) { ("\n ‘он и цвет выбраны одинаковыми. ¬ы ничего не увидите :). \n ѕопробуйте еще раз..."); goto start; }
+	
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(hConsole, (a << 4) | b);
+	
+	printf("\n\n –езультат изменений \n");
+		
 }
 
 void Task6()
 {
 	printf("\n ---------------------------------------------------------------------\n Task6 \n\n");
 
-	int a, b;
+	int n, x;
 
-	printf(" ¬ведите число a => ");
-	scanf_s("%d", &a);
+	printf(" ¬ведите число N => ");
+	scanf_s("%d", &n);
+	printf("\n");
 
-	printf(" ¬ведите число b => ");
-	scanf_s("%d", &b);
+	for (int i = 0; i < 8; i++)
+	{
+		x=pow(n, i);
+		printf(" „исло %d^%d = %d \n", n, i, x);
+	}
+		
 
 }
 
@@ -162,14 +230,56 @@ void Task7()
 {
 	printf("\n ---------------------------------------------------------------------\n Task7 \n\n");
 
-	int a, b;
+	int t1c, t2c, t3c, average, i=0;
+	int t1 = 50 + rand() % 100;
+	int t2 = 50 + rand() % 100;
+	int t3 = 50 + rand() % 100;
 
-	printf(" ¬ведите число a => ");
-	scanf_s("%d", &a);
+	printf("\n  ол-во пасcажиров в первом маршрутном такси: %d \n",t1);
+	printf("  ол-во пасcажиров в первом маршрутном такси: %d \n",t2);
+	printf("  ол-во паcсажиров в первом маршрутном такси: %d \n\n",t3);
 
-	printf(" ¬ведите число b => ");
-	scanf_s("%d", &b);
+	for (t1 == t2 || t2 == t3; i < 7; i++)
+	{
+		average = (t1 + t2 + t3) / 3;
 
+		t1c = t1 - average;
+		t2c = t2 - average;
+		t3c = t3 - average;
+
+		if (t1c < 0)
+		{
+			t1 = t1 - t1c;
+		}
+		else
+		{
+			t1 = t1 + t1c;
+		}
+
+		if (t2c < 0)
+		{
+			t2 = t2 - t2c;
+		}
+		else
+		{
+			t2 = t2 + t2c;
+		}
+
+		if (t3c < 0)
+		{
+			t3 = t3 - t3c;
+		}
+		else
+		{
+			t3 = t3 + t3c;
+		}
+
+
+	}
+	
+	printf("  ол-во пасcажиров в первом маршрутном такси после пересадки: %d \n", t1);
+	printf("  ол-во пасcажиров в первом маршрутном такси после пересадки: %d \n", t2);
+	printf("  ол-во паcсажиров в первом маршрутном такси после пересадки: %d \n\n", t3);
 }
 
 
@@ -199,8 +309,12 @@ start:
 	scanf_s("%d", &flag);
 
 	if (flag == 1)
+	{
+		system("color 07");  // ”становка черного фона = 0  и белого 7
 		goto start;
-
+	}  
+		
+		
 	printf("\n");
 
 	system("pause");
