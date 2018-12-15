@@ -234,65 +234,27 @@ void Task7()
 	float sum, average, res;
 	int t1 = 85; //50 + rand() % 100;
 	int t2 = 66; //50 + rand() % 100;
-	int t3 = 96; //50 + rand() % 100;
+	int t3 = 106; //50 + rand() % 100;
 
 	printf("\n Кол-во пасcажиров в первом маршрутном такси: %d \n",t1);
 	printf(" Кол-во пасcажиров в первом маршрутном такси: %d \n",t2);
 	printf(" Кол-во паcсажиров в первом маршрутном такси: %d \n\n",t3);
+	printf(" Всего пассажиров : %d \n\n", (t1+t2+t3));
 
 	average = (float)(t1 + t2 + t3) / 3;
 
-	sum = (float)(t1 + t2 + t3);
+	
 	t1 = t2 = t3 = average;
 	
-	res = (t1 - average) * 3;
+	res = (average - t1) * 3;
 
-	t1 = t1 + sum / 2;
-	t2 = t2 + sum / 2;
+	if (res != 0 && res < 1.1 && res < 2.0) { t1 = t1 + 1; }
+	if (res > 1.1 && res < 2.0) { t1 = t1 + 1; t2 = t2 + 1;}
 
-
-	/*for (t1 == t2 || t2 == t3; i < 7; i++)
-	{
-		average = (t1 + t2 + t3) / 3;
-
-		t1c = t1 - average;
-		t2c = t2 - average;
-		t3c = t3 - average;
-
-		if (t1c < 0)
-		{
-			t1 = t1 - t1c;
-		}
-		else
-		{
-			t1 = t1 + t1c;
-		}
-
-		if (t2c < 0)
-		{
-			t2 = t2 - t2c;
-		}
-		else
-		{
-			t2 = t2 + t2c;
-		}
-
-		if (t3c < 0)
-		{
-			t3 = t3 - t3c;
-		}
-		else
-		{
-			t3 = t3 + t3c;
-		}
-
-
-	}*/
-	
 	printf(" Кол-во пасcажиров в первом маршрутном такси после пересадки: %d \n", t1);
 	printf(" Кол-во пасcажиров в первом маршрутном такси после пересадки: %d \n", t2);
 	printf(" Кол-во паcсажиров в первом маршрутном такси после пересадки: %d \n\n", t3);
-	printf(" Кол-во не рассаженных : %f \n\n", sum);
+	printf(" Кол-во  рассаженных : %d \n\n", (t1+t2+t3));
 
 }
 
@@ -302,32 +264,33 @@ int main()
 	setlocale(LC_ALL, "");
 	srand(time(NULL));
 
-	int choise, flag;
+	int choise=0, flag, i;
 	
-start:
-	printf("\n Enter number of task => ");
-	scanf_s("%d", &choise);
-
-	switch (choise)
+	do
 	{
-	case 1: {Task1(); } break;
-	case 2: {Task2(); } break;
-	case 3: {Task3(); } break;
-	case 4: {Task4(); } break;
-	case 5: {Task5(); } break;
-	case 6: {Task6(); } break;
-	case 7: {Task7(); } break;
-	}
-
-	printf("\n\n\n Do You want to continue? 1/0 => ");
-	scanf_s("%d", &flag);
-
-	if (flag == 1)
-	{
-		system("color 07");  // Установка черного фона = 0  и белого 7
-		goto start;
-	}  
+		printf("\n Enter number of task => ");
+		scanf_s("%d", &choise);
 		
+		switch (choise)
+		{
+		case 1: {Task1(); } break;
+		case 2: {Task2(); } break;
+		case 3: {Task3(); } break;
+		case 4: {Task4(); } break;
+		case 5: {Task5(); } break;
+		case 6: {Task6(); } break;
+		case 7: {Task7(); } break;
+		
+		}
+
+		printf("\n\n\n Do You want to continue? 1/0 => ");
+		scanf_s("%d", &flag);
+
+		system("color 07");  // Установка черного фона = 0  и белого 7
+
+
+	} while (choise < 0 || choise > 7 || flag==1);
+
 		
 	printf("\n");
 
