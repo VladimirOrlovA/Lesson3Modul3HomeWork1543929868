@@ -96,35 +96,47 @@ void Task3()
 void Task4()
 {
 	printf("\n ---------------------------------------------------------------------\n Task4 \n\n");
-
-	int a, b=1234567890, operation=0, result;
+	
+	int operation = 0;
+	float a, b = 1234567890,  result;
 
 	printf(" Калькулятор \n\n Число => ");
-	scanf_s("%d", &a);
+	scanf_s("%f", &a);
 
-	printf("\n Выберите действие: ");
+	
 	printf("\n (1) -  \"+\"");
 	printf("\n (2) -  \"-\"");
 	printf("\n (3) -  \"*\"");
 	printf("\n (4) -  \"/\"");
 	printf("\n  ");
 
-	start:
-	scanf_s("%d",&operation);
-	if (operation < 1 || operation > 4) { printf("\n Ошибочный выбор. Попробуйте еще раз... "); printf("\n  "); goto start; }
+	do
+	{
+		printf("\n Выберите действие: ");
+		scanf_s("%d", &operation);
+
+		if (operation < 1 || operation > 4)
+		{
+			printf("\n Ошибочный выбор. Попробуйте еще раз... \n");
+		}
+			
+	} while (operation < 1 || operation > 4);
+	
+	printf("\n  ");
+
 
 	printf("\n Число => ");
-	scanf_s("%d", &b);
+	scanf_s("%f", &b);
 	
 		switch (operation)
 		{
-		case 1: {result = a + b; printf("\n Результат %d", result); } break;
-		case 2: {result = a - b; printf("\n Результат %d", result); } break;
-		case 3: {result = a * b; printf("\n Результат %d", result); } break;
+		case 1: {result = a + b; printf("\n Результат %.2f", result); } break;
+		case 2: {result = a - b; printf("\n Результат %.2f", result); } break;
+		case 3: {result = a * b; printf("\n Результат %.2f", result); } break;
 		case 4: 
 		{
 			if (a ==0 || b == 0)	{ printf("\n Деление на ноль!"); }
-			else { result = a / b; printf("\n Результат %d", result);  }
+			else { result = (float)a / b; printf("\n Результат %.2f", result);  }
 		} break;
 
 		}
@@ -207,8 +219,6 @@ void Task5()
 		if (a == b)
 		{
 			printf("\n\n Фон и цвет выбраны одинаковыми. Вы ничего не увидите :). \n Попробуйте еще раз...");
-			//a = 0;
-			//b = 1;
 		}
 
 	} while (a == b);
