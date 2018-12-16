@@ -123,8 +123,8 @@ void Task4()
 		case 3: {result = a * b; printf("\n –езультат %d", result); } break;
 		case 4: 
 		{
-			if (a != 0)	{result = a / b; printf("\n –езультат %d", result);	}
-			else { printf("\n ƒеление на ноль!"); }
+			if (a ==0 || b == 0)	{ printf("\n ƒеление на ноль!"); }
+			else { result = a / b; printf("\n –езультат %d", result);  }
 		} break;
 
 		}
@@ -156,50 +156,63 @@ void Task5()
 	printf("\n 15 Ч €рко - белый");
 
 
-	start:
-	printf("\n ÷вет фона от 0 до 14 => ");
-	scanf_s("%d", &a);
+	do
+	{
+		printf("\n\n ÷вет фона от 0 до 14 => ");
+		scanf_s("%d", &a);
 
-	if (a == 0)		{ printf("\n 0 Ч черный"				); }
-	if (a == 1)		{ printf("\n 1 Ч синий"					); }
-	if (a == 2)		{ printf("\n 2 Ч зеленый"				); }
-	if (a == 3)		{ printf("\n 3 Ч голубой"				); }
-	if (a == 4)		{ printf("\n 4 Ч красный"				); }
-	if (a == 5)		{ printf("\n 5 Ч пурпурный"				); }
-	if (a == 6)		{ printf("\n 6 Ч желтый"				); }
-	if (a == 7)		{ printf("\n 7 Ч белый"					); }
-	if (a == 8)		{ printf("\n 8 Ч серый"					); }
-	if (a == 9)		{ printf("\n 9 Ч свело - синий"			); }
-	if (a == 10)	{ printf("\n 10 Ч светло - зеленый"		); }
-	if (a == 11)	{ printf("\n 11 Ч светло - голубой"		); }
-	if (a == 12)	{ printf("\n 12 Ч светло - красный"		); }
-	if (a == 13)	{ printf("\n 13 Ч светло - пурпурный"	); }
-	if (a == 14)	{ printf("\n 14 Ч светло - желтый"		); }
-	if (a == 15)	{ printf("\n 15 Ч €рко - белый"			); }
+		switch (a)
+		{
+		case 0:		{ printf("\n 0 Ч черный");				} break;
+		case 1:		{ printf("\n 1 Ч синий");				} break;
+		case 2:		{ printf("\n 2 Ч зеленый");				} break;
+		case 3:		{ printf("\n 3 Ч голубой");				} break;
+		case 4:		{ printf("\n 4 Ч красный");				} break;
+		case 5:		{ printf("\n 5 Ч пурпурный");			} break;
+		case 6:		{ printf("\n 6 Ч желтый");				} break;
+		case 7:		{ printf("\n 7 Ч белый");				} break;
+		case 8:		{ printf("\n 8 Ч серый");				} break;
+		case 9:		{ printf("\n 9 Ч свело - синий");		} break;
+		case 10:	{ printf("\n 10 Ч светло - зеленый");	} break;
+		case 11:	{ printf("\n 11 Ч светло - голубой");	} break;
+		case 12:	{ printf("\n 12 Ч светло - красный");	} break;
+		case 13:	{ printf("\n 13 Ч светло - пурпурный"); } break;
+		case 14:	{ printf("\n 14 Ч светло - желтый");	} break;
+		case 15:	{ printf("\n 15 Ч €рко - белый");		} break;
+		}
 
-	printf("\n\n ÷вет шрифта от 0 до 15 => ");
-	scanf_s("%d", &b);
+		printf("\n\n ÷вет шрифта от 0 до 15 => ");
+		scanf_s("%d", &b);
 
-	if (b == 0) { printf("\n 0 Ч черный"); }
-	if (b == 1) { printf("\n 1 Ч синий"); }
-	if (b == 2) { printf("\n 2 Ч зеленый"); }
-	if (b == 3) { printf("\n 3 Ч голубой"); }
-	if (b == 4) { printf("\n 4 Ч красный"); }
-	if (b == 5) { printf("\n 5 Ч пурпурный"); }
-	if (b == 6) { printf("\n 6 Ч желтый"); }
-	if (b == 7) { printf("\n 7 Ч белый"); }
-	if (b == 8) { printf("\n 8 Ч серый"); }
-	if (b == 9) { printf("\n 9 Ч свело - синий"); }
-	if (b == 10) { printf("\n 10 Ч светло - зеленый"); }
-	if (b == 11) { printf("\n 11 Ч светло - голубой"); }
-	if (b == 12) { printf("\n 12 Ч светло - красный"); }
-	if (b == 13) { printf("\n 13 Ч светло - пурпурный"); }
-	if (b == 14) { printf("\n 14 Ч светло - желтый"); }
-	if (b == 15) { printf("\n 15 Ч €рко - белый"); }
+		switch (b)
+		{
+		case 0:		{ printf("\n 0 Ч черный");				} break;
+		case 1:		{ printf("\n 1 Ч синий");				} break;
+		case 2:		{ printf("\n 2 Ч зеленый");				} break;
+		case 3:		{ printf("\n 3 Ч голубой");				} break;
+		case 4:		{ printf("\n 4 Ч красный");				} break;
+		case 5:		{ printf("\n 5 Ч пурпурный");			} break;
+		case 6:		{ printf("\n 6 Ч желтый");				} break;
+		case 7:		{ printf("\n 7 Ч белый");				} break;
+		case 8:		{ printf("\n 8 Ч серый");				} break;
+		case 9:		{ printf("\n 9 Ч свело - синий");		} break;
+		case 10:	{ printf("\n 10 Ч светло - зеленый");	} break;
+		case 11:	{ printf("\n 11 Ч светло - голубой");	} break;
+		case 12:	{ printf("\n 12 Ч светло - красный");	} break;
+		case 13:	{ printf("\n 13 Ч светло - пурпурный"); } break;
+		case 14:	{ printf("\n 14 Ч светло - желтый");	} break;
+		case 15:	{ printf("\n 15 Ч €рко - белый");		} break;
+		}
 
+		if (a == b)
+		{
+			printf("\n\n ‘он и цвет выбраны одинаковыми. ¬ы ничего не увидите :). \n ѕопробуйте еще раз...");
+			//a = 0;
+			//b = 1;
+		}
 
-	if (a == b) { ("\n ‘он и цвет выбраны одинаковыми. ¬ы ничего не увидите :). \n ѕопробуйте еще раз..."); goto start; }
-	
+	} while (a == b);
+		
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(hConsole, (a << 4) | b);
 	
@@ -232,9 +245,9 @@ void Task7()
 
 	int t1c, t2c, t3c, i=0;
 	float sum, average, res;
-	int t1 = 85; //50 + rand() % 100;
-	int t2 = 66; //50 + rand() % 100;
-	int t3 = 106; //50 + rand() % 100;
+	int t1 = 50 + rand() % 30;
+	int t2 = 50 + rand() % 30;
+	int t3 = 50 + rand() % 30;
 
 	printf("\n  ол-во пасcажиров в первом маршрутном такси: %d \n",t1);
 	printf("  ол-во пасcажиров в первом маршрутном такси: %d \n",t2);
@@ -282,12 +295,11 @@ int main()
 		case 7: {Task7(); } break;
 		
 		}
-
+				
 		printf("\n\n\n Do You want to continue? 1/0 => ");
 		scanf_s("%d", &flag);
-
+		
 		system("color 07");  // ”становка черного фона = 0  и белого 7
-
 
 	} while (choise < 0 || choise > 7 || flag==1);
 
